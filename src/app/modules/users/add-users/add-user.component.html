@@ -1,0 +1,38 @@
+<form id="add-user-form" #addUser="ngForm" (submit)="submit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput #username="ngModel" minlength="5" id="username" name="username" [(ngModel)]="user.username" required>
+    <mat-error *ngIf="username.invalid">
+      <span *ngIf="username.errors.required">user name is required</span>
+      <span *ngIf="username.errors.minlength">user name is too short</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-icon matprefix>lock</mat-icon>
+    <mat-label>Password</mat-label>
+    <input matInput #password="ngModel" minlength="8" id="password" name="passsword" [(ngModel)]="user.password" required>
+    <mat-error matSuffix *ngIf="password.invalid">
+      <span *ngIf="password.errors.required">password is required</span>
+      <span *ngIf="password.errors.minlength">password is too short</span>
+    </mat-error>
+    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Firstname</mat-label>
+    <input matInput id="firstname" name="firstname" [(ngModel)]="user.firstname"  required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Lastname</mat-label>
+    <input matInput id="lastname" name="lastname" [(ngModel)]="user.lastname" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput id="email" name="email" [(ngModel)]="user.email" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Role</mat-label>
+    <input matInput id="role" name="role" [(ngModel)]="user.role"  required>
+  </mat-form-field>
+
+  <button [disabled]="addUser.invalid"  mat-button class="mat-primary" type="submit" mat-raised-button>Confirm</button>
+  <button mat-button class="mat-accent" type="reset" mat-raised-button>Reset</button>
+</form>
