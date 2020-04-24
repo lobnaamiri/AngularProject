@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "TestManager"
+  "defaultProject": "TestManager",
+  "cli": {
+    "analytics": "f5f51cf3-5241-44bd-9c8b-8603c74ba65b"
+  }
 }

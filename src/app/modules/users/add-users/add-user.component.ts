@@ -21,7 +21,7 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit() {
-    console.log(this.user);
+  public submit() {
+    this.userService.addUser(this.user);
   }
 }
